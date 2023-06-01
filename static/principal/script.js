@@ -1,3 +1,4 @@
+url_base= "http://18.119.105.122/"
 function openTab(event, tabName) {
   // Oculta todos los elementos con la clase "tabcontent"
   var tabcontent = document.getElementsByClassName("tabcontent");
@@ -27,7 +28,7 @@ function togglePower(event, appliance) {
       topic: topic,
       message: message
     };
-    $.post('http://127.0.0.1:8000/enviar-mqtt/', data, function (response) {
+    $.post(url_base+'enviar-mqtt/', data, function (response) {
       console.log('Respuesta del servidor:', response);
     });
     console.log(`El aparato '${appliance}' ha sido encendido.`);
@@ -38,7 +39,7 @@ function togglePower(event, appliance) {
       topic: topic,
       message: message
     };
-    $.post('http://127.0.0.1:8000/enviar-mqtt/', data, function (response) {
+    $.post(url_base+'enviar-mqtt/', data, function (response) {
       console.log('Respuesta del servidor:', response);
     });
     console.log(`El aparato '${appliance}' ha sido apagado.`);

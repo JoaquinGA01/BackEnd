@@ -30,13 +30,10 @@ async def enviar_mqtt(topic: str = Form(), message: str = Form()):
     print(message)
     print(topic)
     # Configurar opciones de autenticación
-    mqtt_username = 'mjproyect'
-    mqtt_password = 'gA11lEO1'
-    auth = {'username': mqtt_username, 'password': mqtt_password}
     
     # Enviar mensaje al servidor MQTT
-    mqtt_broker = '192.168.0.2'
+    mqtt_broker = 'broker.hivemq.com'
     mqtt_port = 1883
-    mqtt_publish.single(topic, payload=message, hostname=mqtt_broker, port=mqtt_port, auth=auth)
+    mqtt_publish.single(topic, payload=message, hostname=mqtt_broker, port=mqtt_port,)
     
     return {"message": "Mensaje enviado al servidor MQTT"}

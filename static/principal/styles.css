@@ -1,52 +1,58 @@
-* {
-  box-sizing: border-box;
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-header {
-  background-color: #428bca;
+.container {
+  margin: 0 auto;
+  max-width: 800px;
   padding: 20px;
+}
+
+/* Estilos para la barra de navegación */
+header {
+  background-color: #333;
   color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
+  margin-right: 10px;
 }
 
 nav ul li a {
   color: #fff;
-  padding: 10px;
   text-decoration: none;
 }
 
-.container {
-  margin-top: 20px;
-}
-
+/* Estilos para las pestañas */
 .tabcontent {
   display: none;
 }
 
-h2 {
-  margin-bottom: 10px;
-}
-
+/* Estilos para los aparatos */
 .appliance {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 40px;
+  height: 20px;
+  vertical-align: middle;
 }
 
 .switch input {
@@ -69,10 +75,10 @@ h2 {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: .4s;
 }
@@ -81,14 +87,10 @@ input:checked + .slider {
   background-color: #2196F3;
 }
 
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
 input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+  transform: translateX(20px);
 }
